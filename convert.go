@@ -4,29 +4,31 @@ import (
 	"encoding/csv"
 	"fmt"
 	"os"
-	"unicode/utf8"
 	"strings"
+	"unicode/utf8"
 )
 
 const (
-	VERTICAL_DEVIDER = "|"
+	VERTICAL_DEVIDER   = "|"
 	HORIZONTAL_DEVIDER = "-"
 )
 
 func ConvertAll(args *Args) error {
 	for _, file := range args.Files {
-		err := Convert(file, args)
+		md, err := Convert(file, args)
 		if err != nil {
 			return err
 		}
+		// print markdown
+		fmt.Println(md)
 	}
 	return nil
 }
 
-func Convert(file string, args *Args) error {
+func Convert(file string, args *Args) (string, error) {
 	records, err := CsvToArray(file, args.Delim)
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	// modify content
@@ -35,13 +37,10 @@ func Convert(file string, args *Args) error {
 	// array to markdown
 	md, err := ArrayToMd(records, args)
 	if err != nil {
-		return err
+		return "", err
 	}
 
-	// print markdown
-	fmt.Println(md)
-
-	return nil
+	return md, nil
 }
 
 func CsvToArray(file, delim string) ([][]string, error) {
@@ -71,7 +70,7 @@ func ArrayToMd(records [][]string, args *Args) (string, error) {
 
 	md := []string{}
 	md = append(md, rows[0]) // header
-	md = append(md, horiz) // horizontal devider
+	md = append(md, horiz)   // horizontal devider
 	for _, v := range rows[1:] {
 		md = append(md, v)
 	}
@@ -101,13 +100,13 @@ func padCells(records [][]string, colSizes []int) ([][]string, error) {
 			}
 		}
 	}
-	return records, nil 
+	return records, nil
 }
 
 func colMaxSize(records [][]string) []int {
 	var sizes []int = make([]int, len(records[0]))
-	for _, row := range(records) {
-		for j, v := range(row) {
+	for _, row := range records {
+		for j, v := range row {
 			if cur := utf8.RuneCountInString(v); sizes[j] < cur {
 				sizes[j] = cur
 			}

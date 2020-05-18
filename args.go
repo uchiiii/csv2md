@@ -48,7 +48,7 @@ func (args *Args) validatePad() error {
 	if args.Pad < 0 {
 		return fmt.Errorf("Error: padding should be positive integer, but got %d", args.Pad)
 	}
-	return nil 
+	return nil
 }
 
 func contains(s []string, a string) bool {
