@@ -13,19 +13,21 @@ func main() {
 	args := &Args{}
 
 	app := &cli.App{
+		Name: "csv2md",
+		Usage: "convert csv to markdown",
 		Flags: []cli.Flag{
 			&cli.IntFlag{
 				Name:        "padding",
 				Aliases:     []string{"p"},
 				Value:       2,
-				Usage:       "The number of spaces to add between table cells and column dividers. Default is 2 spaces.",
+				Usage:       "The number of spaces to add between table cells and column dividers.",
 				Destination: &args.Pad,
 			},
 			&cli.StringFlag{
 				Name:        "delimiter",
 				Aliases:     []string{"d"},
 				Value:       ",",
-				Usage:       "CSV delimiter, expected values: ',', ';'. Default is ,",
+				Usage:       "CSV delimiter, expected values: ',', ';'.",
 				Destination: &args.Delim,
 			},
 		},

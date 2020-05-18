@@ -13,7 +13,7 @@ $ go get -u -t github.com/uchiiii/csv2md
 ```
 $ csv2md help
 NAME:
-   csv2md - A new cli application
+   csv2md - convert csv to markdown
 
 USAGE:
    csv2md [global options] command [command options] [arguments...]
@@ -22,8 +22,8 @@ COMMANDS:
    help, h  Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --delimiter value, -d value  CSV delimiter, expected values: ',', ';'. Default is , (default: ",")
-   --padding value, -p value    The number of spaces to add between table cells and column dividers. Default is 2 spaces. (default: 2)
+   --delimiter value, -d value  CSV delimiter, expected values: ',', ';'. (default: ",")
+   --padding value, -p value    The number of spaces to add between table cells and column dividers. (default: 2)
    --help, -h                   show help (default: false)
 ```
 
@@ -67,7 +67,7 @@ Tyrion      |  Lannister  |  King's Landing     |  House Lannister
 1. **Newline within cell in csv is converted to `<br/>` which is newline sign in markdown.**
 
 ## Contribution
-Bug reports, fixes, or features? Feel You are wellcome opening issue or pull request any time.
+Whichever it is bug reports, fixes, or features, you are WELLCOME opening issue or pull request any time.
 
 # License
 Copyright (c) 2020 Ryosuke Horiuchi. Licensed under [the MIT License](http://opensource.org/licenses/MIT).
