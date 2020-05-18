@@ -19,9 +19,6 @@ jobs:
       shell: bash
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 1
-        path: src/github.com/${{ github.repository }} 
     - name: cache
       uses: actions/cache@v1
       with:

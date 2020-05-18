@@ -1,6 +1,7 @@
-# csv2md
 ![](https://github.com/uchiiii/csv2md/workflows/CI/badge.svg)
-Convert csv to markdown.
+
+# csv2md
+**Convert csv to markdown.**
 
 ## Install
 
