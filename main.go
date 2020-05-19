@@ -13,7 +13,7 @@ func main() {
 	args := &Args{}
 
 	app := &cli.App{
-		Name: "csv2md",
+		Name:  "csv2md",
 		Usage: "convert csv to markdown",
 		Flags: []cli.Flag{
 			&cli.IntFlag{
