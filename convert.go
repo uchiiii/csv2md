@@ -30,6 +30,9 @@ func Convert(file string, args *Args) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	if len(records) < 1 { // when csv is empty
+		return "", nil
+	}
 
 	// modify content
 	records = Modify(records)
