@@ -71,6 +71,27 @@ func TestConvert(t *testing.T) {
 			t.Errorf("Convert is something wrong. \n expected: %q \n output  : %q", expected, md)
 		}
 	})
+
+	t.Run("should pass", func(t *testing.T) {
+		testFile := "./testdata/test4.csv"
+		args := &Args{
+			Files: []string{testFile},
+			Delim: ",",
+			Pad:   2,
+		}
+
+		expectedTestFile := "./testdata/test4_expected.md"
+		expected := readFile(expectedTestFile)
+
+		md, err := Convert(testFile, args)
+		if err != nil {
+			t.Errorf(err.Error())
+		}
+
+		if md != expected {
+			t.Errorf("Convert is something wrong. \n expected: %q \n output  : %q", expected, md)
+		}
+	})
 }
 
 // test for Modify function.
