@@ -26,7 +26,5 @@ jobs:
         key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
         restore-keys: |
           ${{ runner.os }}-go-
-    - name: fmt
-      run: go fmt ./...
     - name: Run test code
       run: go test ./...
