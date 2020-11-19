@@ -44,23 +44,23 @@ Tyrion,Lannister,King's Landing,House Lannister
 
 output: ([markdown](https://github.com/uchiiii/csv2md/blob/master/testdata/test1_expected.md))
 
-|First Name  |  Last Name  |  Location           |  Allegiance     |
-|------------|-------------|---------------------|-----------------|
-|Mance       |  Rayder     |  North of the Wall  |  Wildlings      |
-|Margaery    |  Tyrell     |  The Reach          |  House Tyrell   |
-|Danerys     |  Targaryen  |  Meereen            |  House Targaryen|
-|Tyrion      |  Lannister  |  King's Landing     |  House Lannister|
+|  First Name  |  Last Name  |  Location           |  Allegiance       |
+|--------------|-------------|---------------------|-------------------|
+|  Mance       |  Rayder     |  North of the Wall  |  Wildlings        |
+|  Margaery    |  Tyrell     |  The Reach          |  House Tyrell     |
+|  Danerys     |  Targaryen  |  Meereen            |  House Targaryen  |
+|  Tyrion      |  Lannister  |  King's Landing     |  House Lannister  |
 
 
 raw output:
 
 ```
-|First Name  |  Last Name  |  Location           |  Allegiance     |
-|------------|-------------|---------------------|-----------------|
-|Mance       |  Rayder     |  North of the Wall  |  Wildlings      |
-|Margaery    |  Tyrell     |  The Reach          |  House Tyrell   |
-|Danerys     |  Targaryen  |  Meereen            |  House Targaryen|
-|Tyrion      |  Lannister  |  King's Landing     |  House Lannister|
+|  First Name  |  Last Name  |  Location           |  Allegiance       |
+|--------------|-------------|---------------------|-------------------|
+|  Mance       |  Rayder     |  North of the Wall  |  Wildlings        |
+|  Margaery    |  Tyrell     |  The Reach          |  House Tyrell     |
+|  Danerys     |  Targaryen  |  Meereen            |  House Targaryen  |
+|  Tyrion      |  Lannister  |  King's Landing     |  House Lannister  |
 ```
 
 

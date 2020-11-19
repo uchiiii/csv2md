@@ -124,15 +124,19 @@ func createHorizontalDivder(colSizes []int, pad int) string {
 		dividers = append(dividers, strings.Repeat(HORIZONTAL_DEVIDER, v))
 	}
 	sep := strings.Repeat(HORIZONTAL_DEVIDER, pad) + VERTICAL_DEVIDER + strings.Repeat(HORIZONTAL_DEVIDER, pad)
+	leftside := VERTICAL_DEVIDER + strings.Repeat("-", pad)
+	rightside := strings.Repeat("-", pad) + VERTICAL_DEVIDER
 
-	return VERTICAL_DEVIDER + strings.Join(dividers, sep) + VERTICAL_DEVIDER
+	return leftside + strings.Join(dividers, sep) + rightside
 }
 
 func concateWithSep(records [][]string, pad int) []string {
 	var rows []string
 	sep := strings.Repeat(" ", pad) + VERTICAL_DEVIDER + strings.Repeat(" ", pad)
+	leftside := VERTICAL_DEVIDER + strings.Repeat(" ", pad)
+	rightside := strings.Repeat(" ", pad) + VERTICAL_DEVIDER
 	for _, row := range records {
-		rows = append(rows, VERTICAL_DEVIDER + strings.Join(row, sep) + VERTICAL_DEVIDER)
+		rows = append(rows, leftside + strings.Join(row, sep) + rightside)
 	}
 	return rows
 }
