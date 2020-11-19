@@ -136,7 +136,7 @@ func concateWithSep(records [][]string, pad int) []string {
 	leftside := VERTICAL_DEVIDER + strings.Repeat(" ", pad)
 	rightside := strings.Repeat(" ", pad) + VERTICAL_DEVIDER
 	for _, row := range records {
-		rows = append(rows, leftside + strings.Join(row, sep) + rightside)
+		rows = append(rows, leftside+strings.Join(row, sep)+rightside)
 	}
 	return rows
 }
