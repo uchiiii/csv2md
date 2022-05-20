@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ go get -u -t github.com/uchiiii/csv2md
+$ go install github.com/uchiiii/csv2md@latest
 ```
 
 ## Usage
