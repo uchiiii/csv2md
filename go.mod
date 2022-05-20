@@ -1,4 +1,4 @@
-module csv2md
+module github.com/uchiiii/csv2md
 
 go 1.13
 
