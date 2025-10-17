@@ -19,8 +19,11 @@ func ConvertAll(args *Args) error {
 		if err != nil {
 			return err
 		}
-		// print markdown
-		fmt.Println(md)
+		if args.OutputFile == "" {
+			fmt.Println(md)
+		} else {
+			os.WriteFile(args.OutputFile, []byte(md), 0644)
+		}
 	}
 	return nil
 }

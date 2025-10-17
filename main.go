@@ -30,6 +30,13 @@ func main() {
 				Usage:       "CSV delimiter, expected values: ',', ';'.",
 				Destination: &args.Delim,
 			},
+			&cli.StringFlag{
+				Name:        "output",
+				Aliases:     []string{"o"},
+				Value:       "",
+				Usage:       "Write output to file",
+				Destination: &args.OutputFile,
+			},
 		},
 		Action: func(c *cli.Context) error {
 			args.Files = c.Args().Slice()
