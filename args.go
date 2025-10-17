@@ -40,14 +40,14 @@ func (args *Args) validateFiles() error {
 
 func (args *Args) validateDelim() error {
 	if !contains(Delims, args.Delim) {
-		return fmt.Errorf("Error: delimiter should be one of %+q, but got %q", Delims, args.Delim)
+		return fmt.Errorf("error: delimiter should be one of %+q, but got %q", Delims, args.Delim)
 	}
 	return nil
 }
 
 func (args *Args) validatePad() error {
 	if args.Pad < 0 {
-		return fmt.Errorf("Error: padding should be positive integer, but got %d", args.Pad)
+		return fmt.Errorf("error: padding should be positive integer, but got %d", args.Pad)
 	}
 	return nil
 }

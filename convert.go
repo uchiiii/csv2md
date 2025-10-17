@@ -100,7 +100,7 @@ func padCells(records [][]string, colSizes []int) ([][]string, error) {
 				fmt.Println(v)
 				fmt.Println(colSizes[j])
 				fmt.Println(utf8.RuneCountInString(v))
-				return nil, fmt.Errorf("Internal error: column size is bigger than max.")
+				return nil, fmt.Errorf("internal error: column size is bigger than max")
 			}
 		}
 	}
