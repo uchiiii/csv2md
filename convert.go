@@ -77,9 +77,7 @@ func ArrayToMd(records [][]string, args *Args) (string, error) {
 	md := []string{}
 	md = append(md, rows[0]) // header
 	md = append(md, horiz)   // horizontal devider
-	for _, v := range rows[1:] {
-		md = append(md, v)
-	}
+	md = append(md, rows[1:]...)
 
 	return strings.Join(md, "\n"), nil
 }
