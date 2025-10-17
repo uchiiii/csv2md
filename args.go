@@ -33,7 +33,7 @@ func (args *Args) ValidateAll() error {
 
 func (args *Args) validateFiles() error {
 	if len(args.Files) < 1 {
-		return fmt.Errorf(ERROR_NO_FILENAME)
+		return fmt.Errorf("%s", ERROR_NO_FILENAME)
 	}
 	return nil
 }

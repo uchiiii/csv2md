@@ -22,7 +22,7 @@ func TestConvert(t *testing.T) {
 
 		md, err := Convert(testFile, args)
 		if err != nil {
-			t.Errorf(err.Error())
+			t.Error(err.Error())
 		}
 
 		if md != expected {
@@ -43,7 +43,7 @@ func TestConvert(t *testing.T) {
 
 		md, err := Convert(testFile, args)
 		if err != nil {
-			t.Errorf(err.Error())
+			t.Error(err.Error())
 		}
 
 		if md != expected {
@@ -64,7 +64,7 @@ func TestConvert(t *testing.T) {
 
 		md, err := Convert(testFile, args)
 		if err != nil {
-			t.Errorf(err.Error())
+			t.Error(err.Error())
 		}
 
 		if md != expected {
@@ -85,7 +85,7 @@ func TestConvert(t *testing.T) {
 
 		md, err := Convert(testFile, args)
 		if err != nil {
-			t.Errorf(err.Error())
+			t.Error(err.Error())
 		}
 
 		if md != expected {

@@ -14,7 +14,7 @@ func TestArgs(t *testing.T) {
 		}
 		err := args.ValidateAll()
 		if err != nil {
-			t.Errorf(err.Error())
+			t.Error(err.Error())
 			t.Errorf("Input Args: %+v\n", args)
 		}
 	})
@@ -27,7 +27,7 @@ func TestArgs(t *testing.T) {
 		}
 		err := args.ValidateAll()
 		if err != nil {
-			t.Errorf(err.Error())
+			t.Error(err.Error())
 			t.Errorf("Input Args: %+v\n", args)
 		}
 	})
