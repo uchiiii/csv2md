@@ -34,8 +34,15 @@ func main() {
 				Name:        "output",
 				Aliases:     []string{"o"},
 				Value:       "",
-				Usage:       "Write output to file",
+				Usage:       "Write output to file, not overwriting existing file by default",
 				Destination: &args.OutputFile,
+			},
+			&cli.BoolFlag{
+				Name:        "force",
+				Aliases:     []string{"f"},
+				Value:       false,
+				Usage:       "Force overwrite, if output file already exists",
+				Destination: &args.ForceOverwrite,
 			},
 		},
 		Action: func(c *cli.Context) error {

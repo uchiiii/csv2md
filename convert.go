@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"errors"
 	"fmt"
 	"os"
 	"strings"
@@ -22,7 +23,14 @@ func ConvertAll(args *Args) error {
 		if args.OutputFile == "" {
 			fmt.Println(md)
 		} else {
-			os.WriteFile(args.OutputFile, []byte(md), 0644)
+			_, err := os.Stat(args.OutputFile)
+			if errors.Is(err, os.ErrNotExist) || args.ForceOverwrite {
+				os.WriteFile(args.OutputFile, []byte(md), 0644)
+			} else {
+				fmt.Printf(
+					"skip writing output, file exists: %s\n", args.OutputFile,
+				)
+			}
 		}
 	}
 	return nil

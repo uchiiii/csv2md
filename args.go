@@ -9,10 +9,11 @@ const (
 )
 
 type Args struct {
-	Files      []string
-	Delim      string
-	Pad        int
-	OutputFile string
+	Files          []string
+	Delim          string
+	Pad            int
+	OutputFile     string
+	ForceOverwrite bool
 }
 
 var Delims = []string{",", ";"}
