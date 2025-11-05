@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"errors"
 	"fmt"
 	"os"
 	"strings"
@@ -19,8 +20,18 @@ func ConvertAll(args *Args) error {
 		if err != nil {
 			return err
 		}
-		// print markdown
-		fmt.Println(md)
+		if args.OutputFile == "" {
+			fmt.Println(md)
+		} else {
+			_, err := os.Stat(args.OutputFile)
+			if errors.Is(err, os.ErrNotExist) || args.ForceOverwrite {
+				os.WriteFile(args.OutputFile, []byte(md), 0644)
+			} else {
+				fmt.Printf(
+					"skip writing output, file exists: %s\n", args.OutputFile,
+				)
+			}
+		}
 	}
 	return nil
 }
@@ -74,9 +85,7 @@ func ArrayToMd(records [][]string, args *Args) (string, error) {
 	md := []string{}
 	md = append(md, rows[0]) // header
 	md = append(md, horiz)   // horizontal devider
-	for _, v := range rows[1:] {
-		md = append(md, v)
-	}
+	md = append(md, rows[1:]...)
 
 	return strings.Join(md, "\n"), nil
 }
@@ -99,7 +108,7 @@ func padCells(records [][]string, colSizes []int) ([][]string, error) {
 				fmt.Println(v)
 				fmt.Println(colSizes[j])
 				fmt.Println(utf8.RuneCountInString(v))
-				return nil, fmt.Errorf("Internal error: column size is bigger than max.")
+				return nil, fmt.Errorf("internal error: column size is bigger than max")
 			}
 		}
 	}
